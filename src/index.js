@@ -4,12 +4,16 @@ function addNewsletter() {
     let email = prompt("Welcome, " + name + "! What is your email?");
     if (email !== null) {
       alert("Your request has been approved!");
-      newsletterButton.innerHTML = "Unsubscribe";
     } else {
       alert("Sorry, your email was not valid");
+    }
+    if (newsletterButton.innerHTML === "Subscribe") {
+      newsletterButton.innerHTML = "Unsubscribe";
+    } else {
+      newsletterButton.innerHTML = "Subscribe";
     }
   }
 }
 
-let newsletterButton = document.querySelector("button");
+let newsletterButton = document.querySelector("#subscribeButton");
 newsletterButton.addEventListener("click", addNewsletter);
